@@ -1,0 +1,32 @@
+<div class="flex items-center mt-2 ml-4">
+  <input
+    type="text"
+    [(ngModel)]="value"
+    class="w-[200px] h-[30px] border border-black rounded"
+    placeholder="Search"
+  />
+  <button
+    (click)="HandleSearch()"
+    class="ml-[10px] w-[100px] h-[30px] border border-black rounded bg-black text-white cursor-pointer"
+  >
+    Search
+  </button>
+
+  <button
+    *ngIf="value.length > 0"
+    (click)="HandleClear()"
+    class="ml-[10px] w-[100px] h-[30px] border rounded bg-gray-200 border-gray-200"
+    role="clear_button"
+  >
+    Clear
+  </button>
+</div>
+
+<!-- BTN CLEAR
+    ==> ne peut s'afficher que si la valeur de l'input est superieur à 6 
+    ==> Emit the Event handleClear pour clear the input 
+-->
+
+<!-- BTN SEARCH
+    ==> Emit the Event handleSearch, searchinput 
+-->
