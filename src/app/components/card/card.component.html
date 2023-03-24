@@ -1,1 +1,5 @@
-<p>card works!</p>
+<div class="w-[200px] h-[270px] my-1" *ngIf="anime" [routerLink]="['/']">
+  <img [src]="anime.image" alt="poster" class="w-full h-full object-cover" />
+  <p>{{ anime.title }}</p>
+  <p>{{ anime.type }}</p>
+</div>
