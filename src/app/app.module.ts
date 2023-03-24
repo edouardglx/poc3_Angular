@@ -17,7 +17,6 @@ import { DetailsComponent } from './pages/details/details.component';
     HeaderComponent,
     FooterComponent,
     DetailsComponent,
-    ,
     CardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
