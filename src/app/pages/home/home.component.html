@@ -1,1 +1,23 @@
-<p>home works!</p>
+<div>
+  <!-- TODO : mettre le header ici -->
+  <div *ngIf="isLoading">
+    <p>Is loading</p>
+  </div>
+  <div
+    *ngIf="!isLoading"
+    class="my-6 flex flex-wrap justify-around py-1 flex-row"
+  >
+    <app-search-bar
+      (handleSearch)="HandleSearch($event)"
+      (clearInput)="HandleClear()"
+    ></app-search-bar>
+    <div *ngFor="let anime of animeList; let index = index" class="my-10">
+      <!-- TODO : remplacer par les Cards ici -->
+      <h1>{{ anime.title + " - index : " + index }}</h1>
+    </div>
+  </div>
+  <div *ngIf="!isLoading && animeList.length === 0">
+    <p>Not found</p>
+  </div>
+  <!-- TODO : mettre le footer ici -->
+</div>

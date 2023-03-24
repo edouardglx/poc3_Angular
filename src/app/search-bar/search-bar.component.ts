@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./search-bar.component.css'],
 })
 export class SearchBarComponent {
-  value!: string;
+  valueInput: string = '';
   @Output() handleSearch = new EventEmitter<string>();
   @Output() clearInput = new EventEmitter<void>();
 
@@ -14,8 +14,6 @@ export class SearchBarComponent {
     this.clearInput.emit();
   }
   HandleSearch() {
-    this.handleSearch.emit(this.value);
+    this.handleSearch.emit(this.valueInput);
   }
 }
-
-//  <app-search-bar (handleSearch)="HandleSearch($emit)" (clearInput)="HandleClear()"></app-search-bar>
