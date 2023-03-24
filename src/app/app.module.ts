@@ -9,6 +9,7 @@ import { CardComponent } from './components/card/card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     FooterComponent,
     CardComponent,
     SearchBarComponent,
+    DetailsComponent,
+    CardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
