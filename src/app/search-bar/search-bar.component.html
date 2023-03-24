@@ -11,7 +11,6 @@
   >
     Search
   </button>
-
   <button
     *ngIf="value.length > 0"
     (click)="HandleClear()"
@@ -21,12 +20,3 @@
     Clear
   </button>
 </div>
-
-<!-- BTN CLEAR
-    ==> ne peut s'afficher que si la valeur de l'input est superieur à 6 
-    ==> Emit the Event handleClear pour clear the input 
--->
-
-<!-- BTN SEARCH
-    ==> Emit the Event handleSearch, searchinput 
--->

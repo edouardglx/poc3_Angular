@@ -17,3 +17,5 @@ export class SearchBarComponent {
     this.handleSearch.emit(this.value);
   }
 }
+
+//  <app-search-bar (handleSearch)="HandleSearch($emit)" (clearInput)="HandleClear()"></app-search-bar>
