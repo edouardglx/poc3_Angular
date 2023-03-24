@@ -1,7 +1,9 @@
 import { Anime } from '@/Anime';
-import { Observable, of } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
@@ -9,15 +11,28 @@ import { Injectable } from '@angular/core';
 export class ApiService {
   private apiUrl_getAllAnimes: string = 'https://anime-db.p.rapidapi.com/anime';
   private apiUrl_getById: string = this.apiUrl_getAllAnimes + '/by-id/';
-
-  options = {
-    header: new HttpHeaders({
-      'X-RapidAPI-Key': '7143b32c4bmshf27bf859b5ab0a3p1b8e7fjsnb504c13fe516',
-      'X-RapidAPI-Host': 'anime-db.p.rapidapi.com',
-    }),
-    responseType: 'json',
-    observe: 'body',
-  };
+  private headers = new HttpHeaders({
+    'X-RapidAPI-Key': environment.apiKey,
+    'X-RapidAPI-Host': 'anime-db.p.rapidapi.com',
+  });
 
   constructor(private http: HttpClient) {}
+
+  getAnimes(page: string, size: string): Observable<Anime[]> {
+    const params = new HttpParams().set('page', page).set('size', size);
+    return this.http
+      .get<{ meta: any; data: Anime[] }>(this.apiUrl_getAllAnimes, {
+        headers: this.headers,
+        params,
+      })
+      .pipe(map((response) => response.data));
+  }
+
+  getSpecificAnime(id: string): Observable<Anime> {
+    return this.http
+      .get<{ meta: any; data: Anime }>(this.apiUrl_getById + id, {
+        headers: this.headers,
+      })
+      .pipe(map((response) => response.data));
+  }
 }
