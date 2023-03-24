@@ -13,6 +13,17 @@ export class HomeComponent implements OnInit {
   initialAnimeList: Anime[] = [];
   isLoading: boolean = true;
 
+  HandleSearch = (value: string) => {
+    if (value.length > 0) {
+      const filteredData = this.initialAnimeList.filter((anime) => {
+        return anime.title.toLowerCase().includes(value.toLowerCase());
+      });
+      this.animeList = filteredData;
+    }
+  };
+  HandleClear = () => {
+    this.animeList = this.initialAnimeList;
+  };
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
