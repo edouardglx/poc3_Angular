@@ -30,6 +30,8 @@
     "@angular/compiler-cli": "^15.2.0",
     "@testing-library/angular": "^13.4.0",
     "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/dom": "^9.2.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^29.5.0",
     "autoprefixer": "^10.4.14",
     "jest": "^29.5.0",
@@ -41,17 +43,8 @@
   "jest": {
     "preset": "jest-preset-angular",
     "setupFilesAfterEnv": [
-      "<rootDir>/src/setup.jest.ts"
+      "<rootDir>/src/setup-jest.ts"
     ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/node_modules/",
-      "<rootDir>/dist/"
-    ],
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "<rootDir>/tsconfig.spec.json",
-        "stringifyContentPathRegex": "\\.html$"
-      }
-    }
+    "globalSetup": "jest-preset-angular/global-setup"
   }
 }
