@@ -11,26 +11,26 @@ describe('SearchBarComponent', () => {
       imports: [FormsModule],
     });
   });
-  it('searchButton should be present', () => {
+  test('searchButton should be present', () => {
     const buttonSearchElem = screen.getByText('Search');
     expect(buttonSearchElem).toBeInTheDocument();
   });
 
-  it('Should render Clear button', async () => {
+  test('Should render Clear button', async () => {
     const inputElem = screen.getByPlaceholderText('Search') as HTMLInputElement;
     fireEvent.input(inputElem, { target: { value: 'Hello' } });
     const clearButtonElement = await screen.findByText('Clear');
     expect(clearButtonElement).toBeInTheDocument();
   });
 
-  it('Should not render Clear button', async () => {
+  test('Should not render Clear button', async () => {
     const inputElem = screen.getByPlaceholderText('Search') as HTMLInputElement;
     await fireEvent.input(inputElem, { target: { value: '' } });
     const clearButtonElement = screen.queryByText('Clear');
     expect(clearButtonElement).not.toBeInTheDocument();
   });
 
-  it('The input should be empty', async () => {
+  test('The input should be empty', async () => {
     const inputElem = screen.getByPlaceholderText('Search') as HTMLInputElement;
     fireEvent.input(inputElem, { target: { value: 'test' } });
     const clearButtonElement = await screen.findByText('Clear');
