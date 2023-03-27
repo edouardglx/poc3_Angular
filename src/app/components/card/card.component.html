@@ -3,7 +3,6 @@
   *ngIf="anime"
   [routerLink]="['details', anime._id]"
 >
-  <!-- TODO : remplacer le lien '/' du routerLink par le lien de l'anime spécifique une fois la page Details terminé -->
   <img [src]="anime.image" alt="poster" class="w-full h-full object-cover" />
   <p>{{ anime.title }}</p>
   <p>{{ anime.type }}</p>

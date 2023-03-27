@@ -43,3 +43,6 @@ Thumbs.db
 
 #env file
 /src/environments/
+/test-results/
+/playwright-report/
+/playwright/.cache/
