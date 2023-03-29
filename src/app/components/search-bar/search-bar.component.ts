@@ -11,6 +11,7 @@ export class SearchBarComponent {
   @Output() clearInput = new EventEmitter<void>();
 
   HandleClear() {
+    this.valueInput = '';
     this.clearInput.emit();
   }
   HandleSearch() {
