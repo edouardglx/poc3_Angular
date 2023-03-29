@@ -3,10 +3,15 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
+    "module": "CommonJs",
     "types": [
       "jest",
       "node",
+<<<<<<< HEAD
       "@testing-library/jest-dom",
+=======
+      // "@testing-library/jest-dom",
+>>>>>>> test/edouard/integration
       "@testing-library/angular"
     ]
   },

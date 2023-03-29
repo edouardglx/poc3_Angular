@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Anime } from '@/Anime';
-import { ApiService } from '@/services/api.service';
+import { ApiService } from '../../services/api.service';
 import { finalize } from 'rxjs/operators';
 
 @Component({
