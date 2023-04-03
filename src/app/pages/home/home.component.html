@@ -1,12 +1,12 @@
 <div>
   <!-- TODO : mettre le header ici -->
-  <div *ngIf="isLoading">
-    <p>Is loading</p>
-  </div>
   <app-search-bar
     (handleSearch)="HandleSearch($event)"
     (clearInput)="HandleClear()"
   ></app-search-bar>
+  <div *ngIf="isLoading">
+    <p>Is loading</p>
+  </div>
   <div
     *ngIf="!isLoading"
     class="my-6 flex flex-wrap justify-around py-1 flex-row"
