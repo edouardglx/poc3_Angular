@@ -1,4 +1,3 @@
-// @ts-check
 const { test, expect } = require('@playwright/test');
 
 test('test from the homepage to the detail page', async ({ page }) => {
