@@ -6,8 +6,8 @@
     "start": "ng serve",
     "build": "ng build --base-href /poc3_Angular/",
     "watch": "ng build --watch --configuration development",
-    "e2e": "playwright test",
-    "test": "jest",
+    "test:e2e": "playwright test",
+    "test:unit": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
@@ -47,6 +47,9 @@
     "setupFilesAfterEnv": [
       "<rootDir>/src/setup-jest.ts"
     ],
-    "globalSetup": "jest-preset-angular/global-setup"
+    "globalSetup": "jest-preset-angular/global-setup",
+    "testPathIgnorePatterns": [
+      "<rootDir>/e2e"
+    ]
   }
 }
