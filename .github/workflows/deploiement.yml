@@ -32,15 +32,15 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
+          # branch: gh-pages
           folder: dist/
-  Lighthouse:
-    needs: build-and-deploy
-    runs-on: ubuntu-latest
-    name: Lighthouse
-    steps:
-      - name: run Lighthouse CI
-        uses: treosh/lighthouse-ci-action@v9
-        with:
-          urls: https://edouardglx.github.io/poc3_Angular/
-          uploadArtifacts: true
+  # Lighthouse:
+  #   needs: build-and-deploy
+  #   runs-on: ubuntu-latest
+  #   name: Lighthouse
+  #   steps:
+  #     - name: run Lighthouse CI
+  #       uses: treosh/lighthouse-ci-action@v9
+  #       with:
+  #         urls: https://edouardglx.github.io/poc3_Angular/
+  #         uploadArtifacts: true
