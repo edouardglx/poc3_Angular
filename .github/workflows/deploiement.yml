@@ -18,7 +18,6 @@ jobs:
   #     - name: Generate coverage report
   #       run: npm run coverage
   build-and-deploy:
-    # needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -35,3 +34,10 @@ jobs:
         with:
           branches: gh-pages
           folder: dist/
+ lighthouse:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    steps:
+
+
+
