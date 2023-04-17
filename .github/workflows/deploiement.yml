@@ -34,10 +34,12 @@ jobs:
         with:
           branches: gh-pages
           folder: dist/
- lighthouse:
+  lhci:
     needs: build-and-deploy
+    name: Lighthouse
     runs-on: ubuntu-latest
     steps:
-
-
-
+      - name: run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.4.x
+          lhci autorun
