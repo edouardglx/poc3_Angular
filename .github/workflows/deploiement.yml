@@ -36,10 +36,11 @@ jobs:
           folder: dist/
   lhci:
     needs: build-and-deploy
-    name: Lighthouse
     runs-on: ubuntu-latest
+    name: Lighthouse
     steps:
       - name: run Lighthouse CI
-        run: |
-          npm install -g @lhci/cli@0.4.x
-          lhci autorun
+        uses: treosh/lighthouse-ci-action@v2
+        with:
+          configPath: "./lighthouserc.json"
+          temporaryPublicStorage: true
