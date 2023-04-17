@@ -32,7 +32,7 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branches: gh-pages
+          branch: gh-pages
           folder: dist/
   Lighthouse:
     needs: build-and-deploy
