@@ -40,7 +40,7 @@ jobs:
     name: Lighthouse
     steps:
       - name: run Lighthouse CI
-        uses: treosh/lighthouse-ci-action@v2
+        uses: treosh/lighthouse-ci-action@v9
         with:
-          configPath: "./lighthouserc.json"
+          configPath: ".lighthouserc.json"
           temporaryPublicStorage: true
